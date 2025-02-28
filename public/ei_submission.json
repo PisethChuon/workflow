@@ -1,0 +1,120 @@
+{
+  "components": [
+    {
+      "text": "# Submission",
+      "type": "text",
+      "id": "TITLE",
+      "layout": {
+        "row": "Row_0z19mud",
+        "columns": null
+      }
+    },
+    {
+      "label": "Patient Information",
+      
+      "components": [
+        {
+          "label": "Patient No",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_016tgyp",
+            "columns": null
+          },
+          "id": "Field_1bi8ydw",
+          "key": "PATIENT_NO"
+        },
+        {
+          "label": "Position",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1tri6or",
+            "columns": null
+          },
+          "id": "Field_07dwe2o",
+          "key": "PATIENT_POSITION"
+        },
+        {
+          "label": "DEPARTMENT",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1r1y2my",
+            "columns": null
+          },
+          "id": "Field_1jr2yfb",
+          "key": "PATIENT_DEPARTMENT"
+        },
+        {
+          "label": "Phone Contact",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1o1qg1x",
+            "columns": null
+          },
+          "id": "Field_0tv6gzc",
+          "key": "PATIENT_PHONE_CONTACT"
+        },
+        {
+          "label": "Call of Incident",
+          "values": [
+            {
+              "label": "value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_1c3fn09",
+            "columns": null
+          },
+          "id": "Field_0gykc1g",
+          "key": "CALL_OF_INCIDENT"
+        },
+        {
+          "label": "Guest Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0zzdyvx",
+            "columns": null
+          },
+          "id": "Field_164ac0h",
+          "key": "GUEST_NAME"
+        },
+        {
+          "label": "Room Number",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1yg4e8x",
+            "columns": null
+          },
+          "id": "Field_1g8qckk",
+          "key": "ROOM_NUMBER"
+        },
+        {
+          "label": "Remark",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_1jvha1p",
+            "columns": null
+          },
+          "id": "Field_0q2aiez",
+          "key": "PATIENT_REMARK"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_14w4rm5",
+        "columns": null
+      },
+      "id": "Field_1szf9nb"
+    }
+  ],
+  "schemaVersion": 17,
+  "exporter": {
+    "name": "form-js (https://demo.bpmn.io)",
+    "version": "1.12.0"
+  },
+  "type": "default",
+  "id": "EI_SUBMISSION",
+  "versionTag": "0.0.1"
+}

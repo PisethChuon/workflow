@@ -1,0 +1,60 @@
+{
+  "components": [
+    {
+      "text": "# Duty SGT\n",
+      "type": "text",
+      "layout": {
+        "row": "Row_0z19mud",
+        "columns": null
+      },
+      "id": "Field_0678x17"
+    },
+    {
+      "label": "Comment",
+      "type": "textarea",
+      "layout": {
+        "row": "Row_0i1u7z6",
+        "columns": null
+      },
+      "id": "Field_00g3tra",
+      "key": "COMMENT"
+    },
+    {
+      "label": "Rework",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1yuyt84",
+        "columns": null
+      },
+      "id": "Field_1utvrn9"
+    },
+    {
+      "label": "Verify",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1yuyt84",
+        "columns": null
+      },
+      "id": "Field_1c6xg90"
+    },
+    {
+      "label": "Reject",
+      "action": "submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_1yuyt84",
+        "columns": null
+      },
+      "id": "Field_0oa5o8a"
+    }
+  ],
+  "schemaVersion": 17,
+  "exporter": {
+    "name": "form-js (https://demo.bpmn.io)",
+    "version": "1.12.0"
+  },
+  "type": "default",
+  "id": "Form_06ngevp"
+}
