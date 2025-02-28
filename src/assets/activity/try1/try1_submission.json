@@ -1,0 +1,46 @@
+{
+  "components": [
+    {
+      "text": "# Text",
+      "type": "text",
+      "label": "Text Field",
+      "id": "Field_1",
+      "layout": {
+        "row": "Row_0rlaley"
+      }
+    },
+    {
+      "label": "Number",
+      "type": "number",
+      "layout": {
+        "row": "Row_08fm88x",
+        "columns": null
+      },
+      "id": "Field_0p7v7tn",
+      "key": "number_e4g41l"
+    },
+    {
+      "label": "File picker",
+      "type": "filepicker",
+      "layout": {
+        "row": "Row_13aqhv0",
+        "columns": null
+      },
+      "id": "Field_0np5r1r",
+      "key": "filepicker_8n3z68"
+    },
+    {
+      "computeOn": "change",
+      "type": "expression",
+      "layout": {
+        "row": "Row_052xus2",
+        "columns": null
+      },
+      "id": "Field_1mp4pow",
+      "key": "expression_y32ovt"
+    }
+  ],
+  "type": "default",
+  "id": "Form_18onbij",
+  "schemaVersion": 18
+}

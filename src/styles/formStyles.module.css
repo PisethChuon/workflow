@@ -1,0 +1,293 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.popup {
+  background-color: #fff;
+  width: 90vw;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 850px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.stateHeader {
+  background: #64748b;
+  padding: 8px 25px;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased space between icon and title */
+}
+
+.headerIcon {
+  width: 42px;
+  height: 42px;
+  fill: white;
+  flex-shrink: 0;
+}
+
+.stateTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff; /* Pure white */
+  text-transform: capitalize;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-align: left; /* Ensure left alignment */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for better contrast */
+}
+/* form */
+
+.formContainer {
+  flex: 1;
+  overflow: auto;
+  padding: 30px;
+  background-color: #f5f7fa; /* Single light gray color */
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f8fafc;
+}
+
+.formContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.formContainer::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.formContainer::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 4px;
+  border: 2px solid #f8fafc;
+}
+
+/* Add styles for form layout */
+.formContainer :global(.fjs-form) {
+  max-width: 100%;
+  padding: 15px;
+}
+
+/* Form group styling */
+.formContainer :global(.fjs-form-group) {
+  border: 1px solid #e2e8f0;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formContainer :global(.fjs-form-group:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.formContainer :global(.fjs-form-group-header) {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+/* Field styling */
+.formContainer :global(.fjs-form-field) {
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.formContainer :global(.fjs-form-field:hover) {
+  border-color: #cbd5e0;
+}
+
+.formContainer :global(.fjs-input) {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Add styles for select/dropdown elements */
+.formContainer :global(.fjs-select) {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 32px; /* Space for custom arrow */
+  transition: all 0.2s ease;
+}
+
+.formContainer :global(.fjs-select:hover) {
+  border-color: #90cdf4;
+  background-color: #f7fafc;
+}
+
+.formContainer :global(.fjs-select:focus) {
+  border-color: #4299e1;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Dropdown options styling */
+.formContainer :global(.fjs-select option) {
+  padding: 12px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+}
+
+.formContainer :global(.fjs-select option:hover) {
+  background-color: #f0f0f0;
+}
+
+/* Select wrapper and label enhancements */
+.formContainer :global(.fjs-form-field[data-field-type="select"]) {
+  margin-bottom: 20px;
+  border: 1px solid #cbd5e0;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.formContainer
+  :global(.fjs-form-field[data-field-type="select"] .fjs-form-field-label) {
+  color: #2d3748;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: block;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* Disabled state */
+.formContainer :global(.fjs-select:disabled) {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Error state */
+.formContainer :global(.fjs-select.has-error) {
+  border-color: #dc3545;
+}
+
+.formContainer :global(.fjs-select.has-error:focus) {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+.formContainer :global(.fjs-select-option) {
+  padding: 8px;
+}
+
+.formContainer :global(.fjs-select-wrapper) {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.formContainer :global(.fjs-form-field-label) {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.formContainer :global(.fjs-form-group) {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.formContainer :global(.fjs-form-group-header) {
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.actionBar {
+  padding: 5px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #fff;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #64748b;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #475569;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12);
+}
+
+.closeButton {
+  composes: button;
+}
+
+/* Fix footer positioning */
+.formContainer :global(.fjs-powered-by) {
+  display: none; /* Hide the form viewer's powered by */
+}
+
+.footer {
+  padding: 8px 20px;
+  text-align: right;
+  color: #6b7280;
+  font-size: 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.footer a {
+  color: #3b82f6;
+  text-decoration: none;
+}

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+  xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0wo5rnq" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.1.1">
+  <bpmn:process id="Process_1jhtlyx" isExecutable="false">
+
+    <bpmn:startEvent id="ACTIVITY_START" name="Start">
+      <bpmn:outgoing>FLOW_TO_SUBMISSION</bpmn:outgoing>
+    </bpmn:startEvent>
+
+    <bpmn:task id="ACTIVITY_TO_SUBMISSION" name="Submission">
+      <bpmn:incoming>FLOW_TO_SUBMISSION</bpmn:incoming>
+      <bpmn:outgoing>Flow_0qkxgbm</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="FLOW_TO_" sourceRef="ACTIVITY_START" targetRef="ACTIVITY_TO_SUBMISSION" />
+
+    <bpmn:task id="ACTIVITY_TO_REQUESTOR_REWORK" name="Requestor Rework">
+      <bpmn:incoming>Flow_13pja62</bpmn:incoming>
+      <bpmn:incoming>FLOW_TO_REWORKED_OF_DUTY_SGT_VERIFY</bpmn:incoming>
+      <bpmn:outgoing>Flow_17uz4j7</bpmn:outgoing>
+      <bpmn:outgoing>FLOW_TO_RESUBMITTED_OF_REQUESTOR_REWORK</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ACTIVITY_TO_REJECTED_NOTIFICATION_OF_DUTY_SGT" name="Rejected Notification">
+      <bpmn:incoming>Flow_1tpr2cd</bpmn:incoming>
+      <bpmn:incoming>FLOW_OF_DUTY_REJECTED</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:task id="ACTIVITY_TO_REQUEST_CANCELATION_OF_REQUESTOR_REWORK" name="Request Cancelation">
+      <bpmn:incoming>Flow_17uz4j7</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_17uz4j7" name="Cancelled" sourceRef="ACTIVITY_TO_REQUESTOR_REWORK" targetRef="ACTIVITY_TO_REQUEST_CANCELATION_OF_REQUESTOR_REWORK" />
+    <bpmn:task id="ACTIVITY_TO_VERIFY_EMAIL_NOTIFICATION" name="Email Notification">
+      <bpmn:incoming>FLOW_TO_HOD_REVIEWED</bpmn:incoming>
+      <bpmn:outgoing>Flow_0lenyrb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="ACTIVITY_TO_HOD_REVIEWED" name="HOD Reviewed">
+      <bpmn:incoming>FLOW_TO_VERIFIED_OF_DUTY_SGT</bpmn:incoming>
+      <bpmn:outgoing>Flow_13pja62</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1tpr2cd</bpmn:outgoing>
+      <bpmn:outgoing>FLOW_TO_HOD_REVIEWED</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_13pja62" name="Reworked" sourceRef="ACTIVITY_TO_HOD_REVIEWED" targetRef="ACTIVITY_TO_REQUESTOR_REWORK" />
+    <bpmn:sequenceFlow id="Flow_1tpr2cd" name="Rejected" sourceRef="ACTIVITY_TO_HOD_REVIEWED" targetRef="ACTIVITY_TO_REJECTED_NOTIFICATION_OF_DUTY_SGT" />
+    <bpmn:endEvent id="Event_1dvo2ck" name="End">
+      <bpmn:incoming>Flow_0lenyrb</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0lenyrb" sourceRef="ACTIVITY_TO_VERIFY_EMAIL_NOTIFICATION" targetRef="Event_1dvo2ck" />
+    <bpmn:task id="ACTIVITY_TO_DUTY_SGT_VERITY" name="Duty SGT Verify">
+      <bpmn:incoming>Flow_0qkxgbm</bpmn:incoming>
+      <bpmn:incoming>FLOW_TO_RESUBMITTED_OF_REQUESTOR_REWORK</bpmn:incoming>
+      <bpmn:outgoing>FLOW_TO_REWORKED_OF_DUTY_SGT_VERIFY</bpmn:outgoing>
+      <bpmn:outgoing>FLOW_TO_VERIFIED_OF_DUTY_SGT</bpmn:outgoing>
+      <bpmn:outgoing>FLOW_OF_DUTY_REJECTED</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0qkxgbm" sourceRef="ACTIVITY_TO_SUBMISSION" targetRef="ACTIVITY_TO_DUTY_SGT_VERITY" />
+    <bpmn:sequenceFlow id="FLOW_TO_REWORKED_OF_DUTY_SGT_VERIFY" name="Reworked" sourceRef="ACTIVITY_TO_DUTY_SGT_VERITY" targetRef="ACTIVITY_TO_REQUESTOR_REWORK" />
+    <bpmn:sequenceFlow id="FLOW_TO_RESUBMITTED_OF_REQUESTOR_REWORK" name="Resubmitted" sourceRef="ACTIVITY_TO_REQUESTOR_REWORK" targetRef="ACTIVITY_TO_DUTY_SGT_VERITY" />
+    <bpmn:sequenceFlow id="FLOW_TO_VERIFIED_OF_DUTY_SGT" name="Verified" sourceRef="ACTIVITY_TO_DUTY_SGT_VERITY" targetRef="ACTIVITY_TO_HOD_REVIEWED" />
+    <bpmn:sequenceFlow id="FLOW_OF_DUTY_REJECTED" name="Rejected" sourceRef="ACTIVITY_TO_DUTY_SGT_VERITY" targetRef="ACTIVITY_TO_REJECTED_NOTIFICATION_OF_DUTY_SGT" />
+    <bpmn:sequenceFlow id="FLOW_TO_HOD_REVIEWED" name="Reviewed" sourceRef="ACTIVITY_TO_HOD_REVIEWED" targetRef="ACTIVITY_TO_VERIFY_EMAIL_NOTIFICATION" />
+  </bpmn:process>
+
+  <bpmndi:BPMNDiagram id='BPMNDiagram_1'>
+    <bpmndi:BPMNPlane id='BPMNPlane_1' bpmnElement='Process_1jhtlyx'>
+      <bpmndi:BPMNShape id='_BPMNShape_StartEvent_2' bpmnElement='ACTIVITY_START'>
+        <dc:Bounds x='492' y='142' width='36' height='36' />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='498' y='112' width='24' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_HOD_REVIEWED_di" bpmnElement="ACTIVITY_TO_HOD_REVIEWED">
+        <dc:Bounds x="460" y="660" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_DUTY_SGT_VERITY_di" bpmnElement="ACTIVITY_TO_DUTY_SGT_VERITY">
+        <dc:Bounds x="460" y="480" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_REQUESTOR_REWORK_di" bpmnElement="ACTIVITY_TO_REQUESTOR_REWORK">
+        <dc:Bounds x="760" y="480" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_VERIFY_EMAIL_NOTIFICATION_di" bpmnElement="ACTIVITY_TO_VERIFY_EMAIL_NOTIFICATION">
+        <dc:Bounds x="460" y="820" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id='Event_1dvo2ck_di' bpmnElement='Event_1dvo2ck'>
+        <dc:Bounds x='492' y='952' width='36' height='36' />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='500' y='995' width='20' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_SUBMISSION_di" bpmnElement="ACTIVITY_TO_SUBMISSION">
+        <dc:Bounds x="460" y="230" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_REQUEST_CANCELATION_OF_REQUESTOR_REWORK_di" bpmnElement="ACTIVITY_TO_REQUEST_CANCELATION_OF_REQUESTOR_REWORK">
+        <dc:Bounds x="760" y="320" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="ACTIVITY_TO_REJECTED_NOTIFICATION_OF_DUTY_SGT_di" bpmnElement="ACTIVITY_TO_REJECTED_NOTIFICATION_OF_DUTY_SGT">
+        <dc:Bounds x="160" y="330" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="FLOW_TO__di" bpmnElement="FLOW_TO_">
+        <di:waypoint x="510" y="178" />
+        <di:waypoint x="510" y="230" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id='Flow_17uz4j7_di' bpmnElement='Flow_17uz4j7'>
+        <di:waypoint x='810' y='480' />
+        <di:waypoint x='810' y='400' />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='815' y='433' width='49' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id='Flow_13pja62_di' bpmnElement='Flow_13pja62'>
+        <di:waypoint x='560' y='700' />
+        <di:waypoint x='810' y='700' />
+        <di:waypoint x='810' y='560' />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='815' y='643' width='50' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id='Flow_1tpr2cd_di' bpmnElement='Flow_1tpr2cd'>
+        <di:waypoint x='460' y='700' />
+        <di:waypoint x='210' y='700' />
+        <di:waypoint x='210' y='410' />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='158' y='643' width='44' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id='Flow_0lenyrb_di' bpmnElement='Flow_0lenyrb'>
+        <di:waypoint x='510' y='900' />
+        <di:waypoint x='510' y='952' />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id='Flow_0qkxgbm_di' bpmnElement='Flow_0qkxgbm'>
+        <di:waypoint x='510' y='310' />
+        <di:waypoint x='510' y='480' />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="FLOW_TO_REWORKED_OF_DUTY_SGT_VERIFY_di" bpmnElement="FLOW_TO_REWORKED_OF_DUTY_SGT_VERIFY">
+        <di:waypoint x="560" y="540" />
+        <di:waypoint x="760" y="540" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='634' y='522' width='50' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="FLOW_TO_RESUBMITTED_OF_REQUESTOR_REWORK_di" bpmnElement="FLOW_TO_RESUBMITTED_OF_REQUESTOR_REWORK">
+        <di:waypoint x="760" y="500" />
+        <di:waypoint x="560" y="500" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='629' y='482' width='62' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="FLOW_TO_VERIFIED_OF_DUTY_SGT_di" bpmnElement="FLOW_TO_VERIFIED_OF_DUTY_SGT">
+        <di:waypoint x="510" y="560" />
+        <di:waypoint x="510" y="660" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='521' y='607' width='37' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="FLOW_OF_DUTY_REJECTED_di" bpmnElement="FLOW_OF_DUTY_REJECTED">
+        <di:waypoint x="460" y="520" />
+        <di:waypoint x="230" y="520" />
+        <di:waypoint x="230" y="410" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='323' y='502' width='44' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="FLOW_TO_HOD_REVIEWED_di" bpmnElement="FLOW_TO_HOD_REVIEWED">
+        <di:waypoint x="510" y="740" />
+        <di:waypoint x="510" y="820" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x='515' y='773' width='49' height='14' />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

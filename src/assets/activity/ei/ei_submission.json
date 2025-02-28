@@ -1,0 +1,301 @@
+{
+  "components": [
+    {
+      "text": "# Submission",
+      "type": "text",
+      "id": "TITLE",
+      "layout": {
+        "row": "Row_0z19mud",
+        "columns": null
+      }
+    },
+    {
+      "label": "Incident Information",
+      "components": [
+        {
+          "label": "Type of incident",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_0r1wylr",
+            "columns": null
+          },
+          "id": "Field_0pgw759",
+          "key": "TYPE_OF_INCIDENT"
+        },
+        {
+          "label": "Code Color",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_02ygepn",
+            "columns": null
+          },
+          "id": "Field_1b8t1tc",
+          "key": "CODE_COLOR"
+        },
+        {
+          "label": "Create Medical Treatment From (Y/N)",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_1n7gpoj",
+            "columns": null
+          },
+          "id": "Field_1jvlz27",
+          "key": "CREATE_MEDICAL_TREATMENT_FROM_YN"
+        },
+        {
+          "subtype": "date",
+          "dateLabel": "Date/Time",
+          "type": "datetime",
+          "layout": {
+            "row": "Row_1mgpsa8",
+            "columns": null
+          },
+          "id": "Field_16x12k7",
+          "key": "DATE_TIME"
+        },
+        {
+          "label": "Property",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_0mkb7ro",
+            "columns": null
+          },
+          "id": "Field_1efhau6",
+          "key": "PROPERTY"
+        },
+        {
+          "label": "Shift of Incident",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_1punoem",
+            "columns": null
+          },
+          "id": "Field_0fnix2s",
+          "key": "SHIFT_OF_INCIDENT"
+        },
+        {
+          "label": "Location",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_0gnhooh",
+            "columns": null
+          },
+          "id": "Field_0e5zgie",
+          "key": "LOCATION"
+        },
+        {
+          "label": "Remark",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_0keon8d",
+            "columns": null
+          },
+          "id": "Field_03zql61",
+          "key": "REMARK"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_0cd3mti",
+        "columns": null
+      },
+      "id": "Field_06hg874"
+    },
+    {
+      "label": "Responder",
+      "components": [
+        {
+          "label": "ID/Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0wkrihq",
+            "columns": null
+          },
+          "id": "Field_0vdwn3s",
+          "key": "RESPONDER_ID"
+        },
+        {
+          "label": "Position",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0v3s5np",
+            "columns": null
+          },
+          "id": "Field_0zyajfc",
+          "key": "RESPONDER_POSITION"
+        },
+        {
+          "label": "Department",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1l4si73",
+            "columns": null
+          },
+          "id": "Field_1n3gwfh",
+          "key": "RESPONDER_DEPARTMENT"
+        },
+        {
+          "label": "Phone Contact",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_18e7qu5",
+            "columns": null
+          },
+          "id": "Field_0q809vm",
+          "key": "RESPONDER_PHONE_CONTACT"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_1h3e84r",
+        "columns": null
+      },
+      "id": "Field_12krazj"
+    },
+    {
+      "label": "Patient Information",
+      "components": [
+        {
+          "label": "Patient No",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_016tgyp",
+            "columns": null
+          },
+          "id": "Field_1bi8ydw",
+          "key": "PATIENT_NO"
+        },
+        {
+          "label": "Position",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1tri6or",
+            "columns": null
+          },
+          "id": "Field_07dwe2o",
+          "key": "PATIENT_POSITION"
+        },
+        {
+          "label": "DEPARTMENT",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1r1y2my",
+            "columns": null
+          },
+          "id": "Field_1jr2yfb",
+          "key": "PATIENT_DEPARTMENT"
+        },
+        {
+          "label": "Phone Contact",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1o1qg1x",
+            "columns": null
+          },
+          "id": "Field_0tv6gzc",
+          "key": "PATIENT_PHONE_CONTACT"
+        },
+        {
+          "label": "Call of Incident",
+          "values": [
+            {
+              "label": "Value",
+              "value": "value"
+            }
+          ],
+          "type": "select",
+          "layout": {
+            "row": "Row_1c3fn09",
+            "columns": null
+          },
+          "id": "Field_0gykc1g",
+          "key": "CALL_OF_INCIDENT"
+        },
+        {
+          "label": "Guest Name",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_0zzdyvx",
+            "columns": null
+          },
+          "id": "Field_164ac0h",
+          "key": "GUEST_NAME"
+        },
+        {
+          "label": "Room Number",
+          "type": "textfield",
+          "layout": {
+            "row": "Row_1yg4e8x",
+            "columns": null
+          },
+          "id": "Field_1g8qckk",
+          "key": "ROOM_NUMBER"
+        },
+        {
+          "label": "Remark",
+          "type": "textarea",
+          "layout": {
+            "row": "Row_1jvha1p",
+            "columns": null
+          },
+          "id": "Field_0q2aiez",
+          "key": "PATIENT_REMARK"
+        }
+      ],
+      "showOutline": true,
+      "type": "group",
+      "layout": {
+        "row": "Row_14w4rm5",
+        "columns": null
+      },
+      "id": "Field_1szf9nb"
+    }
+   
+  ],
+  "schemaVersion": 17,
+  "exporter": {
+    "name": "form-js (https://demo.bpmn.io)",
+    "version": "1.12.0"
+  },
+  "type": "default",
+  "id": "EI_SUBMISSION",
+  "versionTag": "0.0.1"
+}

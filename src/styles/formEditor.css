@@ -1,0 +1,288 @@
+/***************************************
+ * 1. ROOT VARIABLES
+ ***************************************/
+.fjs-container {
+  --color-primary: #2196f3;
+  --color-success: #4caf50;
+  --color-danger: #f44336;
+  --color-preview: #00bcd4;
+  --color-white: #ffffff;
+  --color-grey-225: #e1e1e1;
+  --color-grey-200: #f8f8f8;
+  --color-grey-150: #f0f0f0;
+  --color-grey-100: #fafafa;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.1);
+  height: 100% !important;
+}
+
+/***************************************
+ * 2. MAIN CONTAINER LAYOUT
+ ***************************************/
+.form-editor-container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-grey-200);
+}
+
+.editor-preview-container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/***************************************
+ * 3. TOOLBAR COMPONENTS
+ ***************************************/
+.form-toolbar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-grey-225);
+}
+
+/* Toolbar Buttons */
+.form-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.form-button:hover {
+  filter: brightness(110%);
+  transform: translateY(-1px);
+}
+
+/* Button Variants */
+.form-button--save { background-color: var(--color-primary); }
+.form-button--open { background-color: var(--color-success); }
+.form-button--preview { background-color: var(--color-preview); }
+.form-button--preview-active { background-color: var(--color-danger); }
+
+/***************************************
+ * 4. FORM EDITOR CORE
+ ***************************************/
+.form-editor {
+  height: 100%;
+  background: var(--color-white);
+}
+
+.fjs-element {
+  box-shadow: none !important;
+  margin-bottom: 16px;
+}
+
+.fjs-form {
+  padding: 20px !important;
+}
+
+/***************************************
+ * 5. PREVIEW PANEL
+ ***************************************/
+.preview-panel {
+  width: 40%;
+  border-left: 1px solid var(--color-grey-225);
+  background-color: var(--color-white);
+  overflow-y: auto;
+}
+
+.form-preview {
+  padding: 20px;
+  background: var(--color-white);
+  border-left: 1px solid var(--color-grey-225);
+}
+
+/***************************************
+ * 6. PROPERTIES PANEL
+ ***************************************/
+.fjs-properties-panel {
+  position: static !important;
+  max-width: 300px !important;
+  background-color: var(--color-white) !important;
+  border-left: 1px solid var(--color-grey-225) !important;
+}
+
+.fjs-properties-panel-header {
+  padding: 12px 16px;
+  background-color: var(--color-grey-200);
+  border-bottom: 1px solid var(--color-grey-225);
+  font-weight: 500;
+}
+
+.fjs-properties-panel-group {
+  margin: 12px !important;
+  border: 1px solid var(--color-grey-225) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+
+/***************************************
+ * 7. FORM FIELDS
+ ***************************************/
+.fjs-form-field {
+  margin-bottom: 16px;
+  background-color: transparent !important;
+}
+
+.fjs-form-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/***************************************
+ * 8. INPUTS AND SELECTS
+ ***************************************/
+.fjs-input,
+.fjs-select,
+.fjs-form-field select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-grey-225);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: all 0.2s;
+  background-color: var(--color-white);
+}
+
+/* Focus States */
+.fjs-input:focus,
+.fjs-select:focus,
+.fjs-form-field select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+  outline: none;
+}
+
+/* Select Dropdowns */
+.fjs-select,
+.fjs-form-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 32px;
+}
+
+/***************************************
+ * 9. CHECKBOX AND RADIO COMPONENTS
+ ***************************************/
+/* Checkbox container */
+.fjs-form-field[data-field-type="checkbox"],
+.fjs-form-field[data-field-type="radio"] {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Checkbox and Radio inputs */
+.fjs-input[type="checkbox"],
+.fjs-input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid var(--color-grey-225);
+  border-radius: 3px;
+  transition: all 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Radio specific styles */
+.fjs-input[type="radio"] {
+  border-radius: 50%;
+}
+
+/* Checked states */
+.fjs-input[type="checkbox"]:checked,
+.fjs-input[type="radio"]:checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* Checkbox check mark */
+.fjs-input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Radio check mark */
+.fjs-input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Hover states */
+.fjs-input[type="checkbox"]:hover,
+.fjs-input[type="radio"]:hover {
+  border-color: var(--color-primary);
+}
+
+/* Focus states */
+.fjs-input[type="checkbox"]:focus,
+.fjs-input[type="radio"]:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+  outline: none;
+}
+
+/* Label positioning for checkboxes and radios */
+.fjs-form-field[data-field-type="checkbox"] label,
+.fjs-form-field[data-field-type="radio"] label {
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Radio group container */
+.fjs-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/***************************************
+ * 10. BROWSER COMPATIBILITY
+ ***************************************/
+@-moz-document url-prefix() {
+  .fjs-select,
+  .fjs-form-field select {
+    padding-right: 32px !important;
+  }
+}

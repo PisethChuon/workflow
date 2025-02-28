@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="sid-38422fae-e03e-43a3-bef4-bd33b32041b2" targetNamespace="http://bpmn.io/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="18.1.1">
+  <process id="bpmn:process_1" isExecutable="false">
+    <startEvent id="bpmn:startEvent_1y45yut" name="Start">
+      <outgoing>bpmn:sequenceFlow_0h21x7r</outgoing>
+    </startEvent>
+    <task id="bpmn:task_1hcentk" name="try1">
+      <incoming>bpmn:sequenceFlow_0h21x7r</incoming>
+      <outgoing>Flow_0pszmv5</outgoing>
+    </task>
+    <sequenceFlow id="bpmn:sequenceFlow_0h21x7r" sourceRef="bpmn:startEvent_1y45yut" targetRef="bpmn:task_1hcentk" />
+    <endEvent id="Event_0f6umgd" name="End">
+      <incoming>Flow_0pszmv5</incoming>
+    </endEvent>
+    <sequenceFlow id="Flow_0pszmv5" sourceRef="bpmn:task_1hcentk" targetRef="Event_0f6umgd" />
+  </process>
+  <bpmndi:BPMNDiagram id="BpmnDiagram_1">
+    <bpmndi:BPMNPlane id="BpmnPlane_1" bpmnElement="bpmn:process_1">
+      <bpmndi:BPMNShape id="bpmn:startEvent_1y45yut_di" bpmnElement="bpmn:startEvent_1y45yut">
+        <omgdc:Bounds x="152" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="158" y="145" width="25" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="bpmn:task_1hcentk_di" bpmnElement="bpmn:task_1hcentk">
+        <omgdc:Bounds x="240" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0f6umgd_di" bpmnElement="Event_0f6umgd">
+        <omgdc:Bounds x="402" y="102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="410" y="145" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="bpmn:sequenceFlow_0h21x7r_di" bpmnElement="bpmn:sequenceFlow_0h21x7r">
+        <omgdi:waypoint x="188" y="120" />
+        <omgdi:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pszmv5_di" bpmnElement="Flow_0pszmv5">
+        <omgdi:waypoint x="340" y="120" />
+        <omgdi:waypoint x="402" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,48 @@
+.input-container {
+  width: 90%; /* Use percentage for better responsiveness */
+  max-width: 400px; /* Maximum width to keep it from stretching too wide on large screens */
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%; /* Full width of its container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+/* Media query for small screens */
+@media (max-width: 480px) {
+  .input-container {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  input[type="text"] {
+    font-size: 14px; /* Smaller font for smaller screens */
+  }
+}
+
+/* Media query for medium screens */
+@media (min-width: 481px) and (max-width: 768px) {
+  .input-container {
+    width: 80%; /* Slightly narrower container for medium screens */
+  }
+}
